@@ -41,7 +41,7 @@ no `violation` is produced.
 | Policy | File | What it checks |
 | --- | --- | --- |
 | **No default root user** | [`default-non-root-user.rego`](rego/default-non-root-user.rego) | The image defines a non-root default `USER`. Enforced for non-dev, non-SDK, non-package variants. |
-| **No fixable critical or high vulnerabilities** | [`fixable-vulnerabilities.rego`](rego/fixable-vulnerabilities.rego) | Flags packages affected by critical/high severity CVEs that already have a fix available. |
+| **No fixable vulnerabilities past their remediation SLA** | [`fixable-vulnerabilities.rego`](rego/fixable-vulnerabilities.rego) | Flags packages with a fixable CVE whose remediation SLA has elapsed. SLAs vary by severity (CRITICAL/HIGH 7 days, others 30 days), with a 1-day SLA for CISA KEV-listed CVEs. |
 | **No high-profile vulnerabilities** | [`high-profile-vulnerabilities.rego`](rego/high-profile-vulnerabilities.rego) | Checks a curated list of well-known, high-impact CVEs, optionally including CISA KEV. |
 | **No embedded malware** | [`no-embedded-malware.rego`](rego/no-embedded-malware.rego) | Verifies the malware scan attestation is present, matches the image, and reports no infected files. |
 | **No embedded secrets** | [`no-embedded-secrets.rego`](rego/no-embedded-secrets.rego) | Verifies the secret scan attestation is present, matches the image, and found no leaked secrets. |

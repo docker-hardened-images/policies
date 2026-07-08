@@ -8,26 +8,22 @@
       "name": "fixable-vulnerabilities",
       "enabled": true,
       "config": {
-        "severities": ["CRITICAL", "HIGH"],
-        "fixable_only": true,
-        "package_types": [],
-        "grace_period_days": 7
+        "slas": {
+          "CRITICAL": 7,
+          "HIGH": 7,
+          "MEDIUM": 30,
+          "LOW": 30,
+          "UNSPECIFIED": 30
+        },
+        "kev_sla_days": 1,
+        "default_sla_days": 30,
+        "package_types": []
       }
     },
     {
       "name": "high-profile-vulnerabilities",
       "enabled": true,
       "config": {
-        "cves": [
-          "CVE-2014-0160",
-          "CVE-2014-6271",
-          "CVE-2021-44228",
-          "CVE-2021-45046",
-          "CVE-2022-22965",
-          "CVE-2023-38545",
-          "CVE-2023-44487",
-          "CVE-2024-3094"
-        ],
         "ignored_cves": [],
         "include_cisa_kev": true
       }
@@ -54,10 +50,7 @@
     },
     {
       "name": "dhi-stig-scan-score",
-      "enabled": true,
-      "config": {
-        "target_score": 100
-      }
+      "enabled": true
     }
   ]
 }
