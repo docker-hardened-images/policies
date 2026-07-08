@@ -1,0 +1,43 @@
+{
+  "bundles": [
+    "dhi/policies:0.0.2@sha256:9abb52ba203238ce39f417bb908165c4c7e186a937461589ee72c8441430f3b4"
+  ],
+  "policies": [
+    {
+      "name": "dhi-default-non-root-user",
+      "enabled": true
+    },
+    {
+      "name": "fixable-vulnerabilities",
+      "enabled": false
+    },
+    {
+      "name": "high-profile-vulnerabilities",
+      "enabled": true
+    },
+    {
+      "name": "dhi-no-embedded-malware",
+      "enabled": true
+    },
+    {
+      "name": "dhi-no-embedded-secrets",
+      "enabled": true
+    },
+    {
+      "name": "dhi-no-failing-tests",
+      "enabled": true
+    },
+    {
+      "name": "dhi-signed-supply-chain-attestations",
+      "enabled": true
+    },
+    {
+      "name": "dhi-unintentional-shell-or-package-manager",
+      "enabled": true
+    },
+    {
+      "name": "dhi-stig-scan-score",
+      "enabled": false
+    }
+  ]
+}
